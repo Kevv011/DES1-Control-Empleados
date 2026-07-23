@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using DES1_Control_Empleados.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add DBContext
+builder.Services.AddDbContext<ControlEmpleadosDBContext>(options =>options.UseSqlServer(builder.Configuration.GetConnectionString("ControlEmpleadosDB")));
 
 var app = builder.Build();
 
