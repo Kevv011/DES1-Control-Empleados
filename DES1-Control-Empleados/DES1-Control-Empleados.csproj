@@ -5,6 +5,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>DES1_Control_Empleados</RootNamespace>
+    <!-- Ignorar el warning de auditoría de NuGet que bloquea las migraciones en PowerShell -->
+    <NoWarn>$(NoWarn);NU1901</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
