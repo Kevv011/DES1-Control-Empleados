@@ -1,8 +1,63 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-5">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-8 text-center text-lg-start">
+            <h1 class="display-4 fw-bold text-primary mb-3">Control de Empleados</h1>
+            <p class="lead text-muted">Gestión rápida, segura y eficiente de tu personal en cualquier lugar y en cualquier momento.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+                <a asp-controller="Employees" asp-action="Index" class="btn btn-primary btn-lg px-4 me-md-2 shadow-sm">
+                    👥 Gestionar Empleados
+                </a>
+                <a asp-controller="Departments" asp-action="Index" class="btn btn-outline-secondary btn-lg px-4 shadow-sm">
+                    🏢 Ver Departamentos
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block text-center">
+            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center shadow-sm" style="width: 250px; height: 250px; margin: 0 auto; border: 5px solid #fff;">
+                <span style="font-size: 6rem;">👨‍💼</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row g-4 py-4 border-top">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm text-center p-3">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <span style="font-size: 2.5rem;">📝</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Registro Detallado</h5>
+                    <p class="card-text text-muted">Añade y actualiza la información completa de tu talento humano con facilidad.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm text-center p-3">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <span style="font-size: 2.5rem;">🔒</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Seguridad y Confianza</h5>
+                    <p class="card-text text-muted">La privacidad de los datos de tus empleados mantenida de forma segura.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm text-center p-3">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <span style="font-size: 2.5rem;">📊</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Organización Clara</h5>
+                    <p class="card-text text-muted">Estructura tu empresa por departamentos para un mejor manejo administrativo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
