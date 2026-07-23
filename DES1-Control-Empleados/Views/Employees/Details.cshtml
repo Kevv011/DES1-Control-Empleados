@@ -1,59 +1,74 @@
 @model DES1_Control_Empleados.Models.Employee
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles del Empleado";
 }
 
-<h1>Details</h1>
+<div class="row justify-content-center my-4">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-white border-0 pt-4 pb-0 text-center">
+                <h2 class="text-info fw-bold mb-2">Detalles del Empleado</h2>
+                <p class="text-muted">Información completa registrada</p>
+            </div>
+            <div class="card-body p-4">
+                <dl class="row gy-3">
+                    <dt class="col-sm-4 text-secondary">
+                        @Html.DisplayNameFor(model => model.Code)
+                    </dt>
+                    <dd class="col-sm-8 fw-medium">
+                        <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill px-3 py-2">
+                            @Html.DisplayFor(model => model.Code)
+                        </span>
+                    </dd>
 
-<div>
-    <h4>Employee</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Code)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Code)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HireDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HireDate)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Salary)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Salary)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+                    <dt class="col-sm-4 text-secondary">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-8 fw-medium text-dark">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+                    <dt class="col-sm-4 text-secondary">
+                        @Html.DisplayNameFor(model => model.BirthDate)
+                    </dt>
+                    <dd class="col-sm-8 fw-medium">
+                        @Html.DisplayFor(model => model.BirthDate)
+                    </dd>
+
+                    <dt class="col-sm-4 text-secondary">
+                        @Html.DisplayNameFor(model => model.HireDate)
+                    </dt>
+                    <dd class="col-sm-8 fw-medium">
+                        @Html.DisplayFor(model => model.HireDate)
+                    </dd>
+
+                    <dt class="col-sm-4 text-secondary">
+                        @Html.DisplayNameFor(model => model.Salary)
+                    </dt>
+                    <dd class="col-sm-8 fw-bold text-success">
+                        $@Html.DisplayFor(model => model.Salary)
+                    </dd>
+
+                    <dt class="col-sm-4 text-secondary">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+                    <dd class="col-sm-8 text-muted">
+                        @(string.IsNullOrEmpty(Model.Description) ? "Sin descripción" : Model.Description)
+                    </dd>
+                </dl>
+
+                <hr class="my-4 text-muted" />
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <a asp-action="Index" class="btn btn-outline-secondary rounded-3 px-4">
+                        Regresar
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-info text-white rounded-3 px-5 shadow-sm">
+                        Editar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
